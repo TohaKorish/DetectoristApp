@@ -38,7 +38,7 @@ builder.Services.AddDbContext<DetectoristDbContext>(
                 serverVersion: ServerVersion.AutoDetect(connectionString))
 );
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped<IDetectoristRepository, DetectoristRepository>();
 builder.Services.AddScoped<ICoilRepository, CoilRepository>();
 builder.Services.AddScoped<IMetaldetectorRepository, MetaldetectorRepository>();
@@ -47,6 +47,7 @@ builder.Services.AddScoped<IDetectoristService, DetectoristService>();
 builder.Services.AddScoped<ICoilService, CoilService>();
 builder.Services.AddScoped<IMetaldetectorService, MetaldetectorService>();
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 var app = builder.Build();
